@@ -6,15 +6,16 @@
 //
 
 import UIKit
+import FloatingPanel
 
 final class AuthViewController: BaseViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .blue
     }
     
     override func configure() {
-        
+        view.backgroundColor = Background.primary
     }
 }

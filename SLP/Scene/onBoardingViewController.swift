@@ -7,38 +7,16 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 final class onBoardingViewController: BaseViewController {
 
-    let label = {
-        let view = UILabel()
-        view.text = "새싹톡을 사용하면 어디서나\n팀을 모을 수 있습니다"
-        view.numberOfLines = 2
-        view.textAlignment = .center
-        view.font = Typography.title1
-        return view
-    }()
+    private let label = UILabel()
+    private let imageView = UIImageView()
+    private let startButton = UIButton()
     
-    let imageView = {
-        let view = UIImageView()
-        view.image = UIImage(named: "onboarding")
-        view.contentMode = .scaleAspectFit
-        return view
-    }()
-    
-    lazy var startButton = {
-        let view = UIButton()
-        view.setImage(UIImage(named: "startButton_active"), for: .normal)
-        view.addTarget(self, action: #selector(startButtonPresssed), for: .touchUpInside)
-        return view
-    }()
-    
-    @objc
-    private func startButtonPresssed() {
-        let vc = AuthViewController()
-        vc.modalPresentationStyle = .pageSheet
-        present(vc, animated: true)
-    }
+    private let disposeBag = DisposeBag()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -51,6 +29,36 @@ final class onBoardingViewController: BaseViewController {
         
         }
 
+    override func bind() {
+        let title = BehaviorSubject(value: "새싹톡을 사용하면 어디서나\n팀을 모을 수 있습니다")
+        let image = BehaviorSubject(value: UIImage(named: "onboarding"))
+        
+        title
+            .subscribe(with: label) { owner, string in
+                owner.text = string
+                owner.font = Typography.title1
+                owner.textAlignment = .center
+                owner.numberOfLines = 2
+            }
+            .disposed(by: disposeBag)
+        
+        image
+            .subscribe(with: imageView) { owner, image in
+                owner.image = image
+                owner.contentMode = .scaleAspectFit
+            }
+            .disposed(by: disposeBag)
+        
+        startButton.rx.image().onNext(UIImage(named: "startButton_active"))
+        
+        startButton.rx.tap
+            .bind { _ in
+                let vc = AuthViewController()
+                self.present(vc, animated: true)
+            }
+            .disposed(by: disposeBag)
+    }
+    
     override func configure() {
         
         view.backgroundColor = Background.primary

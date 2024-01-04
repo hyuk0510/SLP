@@ -13,7 +13,10 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         
         configure()
+        bind()
     }
     
     func configure() {}
+    
+    func bind() {}
 }

@@ -6,24 +6,15 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class SplashViewController: BaseViewController {
     
-    let label = {
-        let view = UILabel()
-        view.text = "새싹톡을 사용하면 어디서나\n팀을 모을 수 있습니다"
-        view.numberOfLines = 2
-        view.font = Typography.title1
-        view.textAlignment = .center
-        return view
-    }()
+    private let label = UILabel()
+    private let imageView = UIImageView()
     
-    let imageView = {
-        let view = UIImageView()
-        view.image = UIImage(named: "onboarding")
-        view.contentMode = .scaleAspectFit
-        return view
-    }()
+    private let disposeBag = DisposeBag()
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -38,6 +29,28 @@ final class SplashViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    override func bind() {
+        
+        let title = BehaviorSubject(value: "새싹톡을 사용하면 어디서나\n팀을 모을 수 있습니다")
+        let image = BehaviorSubject(value: UIImage(named: "onboarding"))
+        
+        title
+            .subscribe(with: label) { owner, string in
+                owner.text = string
+                owner.font = Typography.title1
+                owner.numberOfLines = 2
+                owner.textAlignment = .center
+            }
+            .disposed(by: DisposeBag())
+        
+        image
+            .subscribe(with: imageView, onNext: { owner, image in
+                owner.image = image
+                owner.contentMode = .scaleAspectFit
+            })
+            .disposed(by: disposeBag)
     }
     
     override func configure() {
