@@ -54,9 +54,7 @@ final class SplashViewController: BaseViewController {
     }
     
     override func configure() {
-        
-        view.backgroundColor = Background.primary
-        
+                
         [label, imageView].forEach { subView in
             view.addSubview(subView)
         }

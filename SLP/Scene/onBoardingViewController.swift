@@ -15,7 +15,7 @@ final class onBoardingViewController: BaseViewController {
     private let label = UILabel()
     private let imageView = UIImageView()
     private let startButton = UIButton()
-    
+
     private let disposeBag = DisposeBag()
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,16 +53,14 @@ final class onBoardingViewController: BaseViewController {
         
         startButton.rx.tap
             .bind { _ in
-                let vc = AuthViewController()
+                let vc = BottomSheetViewController()
                 self.present(vc, animated: true)
             }
             .disposed(by: disposeBag)
     }
     
     override func configure() {
-        
-        view.backgroundColor = Background.primary
-        
+                
         [label, imageView, startButton].forEach { subView in
             view.addSubview(subView)
         }

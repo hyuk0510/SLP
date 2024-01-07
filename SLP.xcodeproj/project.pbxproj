@@ -19,10 +19,13 @@
 		D852A9732B467C7E005C61C5 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D852A9722B467C7E005C61C5 /* UIColor+Extension.swift */; };
 		D852A9752B467DC9005C61C5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D852A9742B467DC9005C61C5 /* Color.swift */; };
 		D852A9772B468185005C61C5 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D852A9762B468185005C61C5 /* AuthViewController.swift */; };
-		D89FD6E62B468A99005EEE8D /* FloatingPanel in Frameworks */ = {isa = PBXBuildFile; productRef = D89FD6E52B468A99005EEE8D /* FloatingPanel */; };
 		D89FD6E92B46941C005EEE8D /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = D89FD6E82B46941C005EEE8D /* RxCocoa */; };
 		D89FD6EB2B46941C005EEE8D /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = D89FD6EA2B46941C005EEE8D /* RxRelay */; };
 		D89FD6ED2B46941C005EEE8D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D89FD6EC2B46941C005EEE8D /* RxSwift */; };
+		D89FD6F02B469C59005EEE8D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89FD6EF2B469C59005EEE8D /* SignUpViewController.swift */; };
+		D89FD6F72B4A9670005EEE8D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89FD6F62B4A9670005EEE8D /* LoginViewController.swift */; };
+		D89FD6FC2B4A97E6005EEE8D /* FloatingPanel in Frameworks */ = {isa = PBXBuildFile; productRef = D89FD6FB2B4A97E6005EEE8D /* FloatingPanel */; };
+		D89FD6FE2B4AA6B5005EEE8D /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89FD6FD2B4AA6B5005EEE8D /* BottomSheetViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,9 @@
 		D852A9722B467C7E005C61C5 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		D852A9742B467DC9005C61C5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		D852A9762B468185005C61C5 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		D89FD6EF2B469C59005EEE8D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		D89FD6F62B4A9670005EEE8D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D89FD6FD2B4AA6B5005EEE8D /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,10 +53,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D89FD6E92B46941C005EEE8D /* RxCocoa in Frameworks */,
+				D89FD6FC2B4A97E6005EEE8D /* FloatingPanel in Frameworks */,
 				D852A9662B43D1B0005C61C5 /* SnapKit in Frameworks */,
 				D89FD6ED2B46941C005EEE8D /* RxSwift in Frameworks */,
 				D89FD6EB2B46941C005EEE8D /* RxRelay in Frameworks */,
-				D89FD6E62B468A99005EEE8D /* FloatingPanel in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,9 +123,12 @@
 		D852A96A2B43D920005C61C5 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				D89FD6F52B4A9668005EEE8D /* Login */,
+				D89FD6EE2B469C4F005EEE8D /* SignUp */,
 				D852A96B2B43DBE3005C61C5 /* SplashViewController.swift */,
 				D852A94E2B43C685005C61C5 /* onBoardingViewController.swift */,
 				D852A9762B468185005C61C5 /* AuthViewController.swift */,
+				D89FD6FD2B4AA6B5005EEE8D /* BottomSheetViewController.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -130,6 +139,22 @@
 				D852A9722B467C7E005C61C5 /* UIColor+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		D89FD6EE2B469C4F005EEE8D /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				D89FD6EF2B469C59005EEE8D /* SignUpViewController.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		D89FD6F52B4A9668005EEE8D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D89FD6F62B4A9670005EEE8D /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,10 +175,10 @@
 			name = SLP;
 			packageProductDependencies = (
 				D852A9652B43D1B0005C61C5 /* SnapKit */,
-				D89FD6E52B468A99005EEE8D /* FloatingPanel */,
 				D89FD6E82B46941C005EEE8D /* RxCocoa */,
 				D89FD6EA2B46941C005EEE8D /* RxRelay */,
 				D89FD6EC2B46941C005EEE8D /* RxSwift */,
+				D89FD6FB2B4A97E6005EEE8D /* FloatingPanel */,
 			);
 			productName = SLP;
 			productReference = D852A9472B43C685005C61C5 /* SLP.app */;
@@ -185,8 +210,8 @@
 			mainGroup = D852A93E2B43C685005C61C5;
 			packageReferences = (
 				D852A9642B43D1B0005C61C5 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				D89FD6E42B468A99005EEE8D /* XCRemoteSwiftPackageReference "FloatingPanel" */,
 				D89FD6E72B46941C005EEE8D /* XCRemoteSwiftPackageReference "RxSwift" */,
+				D89FD6FA2B4A97E6005EEE8D /* XCRemoteSwiftPackageReference "FloatingPanel" */,
 			);
 			productRefGroup = D852A9482B43C685005C61C5 /* Products */;
 			projectDirPath = "";
@@ -218,11 +243,14 @@
 				D852A94B2B43C685005C61C5 /* AppDelegate.swift in Sources */,
 				D852A94D2B43C685005C61C5 /* SceneDelegate.swift in Sources */,
 				D852A9612B43CAA4005C61C5 /* Typography.swift in Sources */,
+				D89FD6F02B469C59005EEE8D /* SignUpViewController.swift in Sources */,
 				D852A96C2B43DBE3005C61C5 /* SplashViewController.swift in Sources */,
 				D852A9752B467DC9005C61C5 /* Color.swift in Sources */,
 				D852A9692B43D263005C61C5 /* BaseViewController.swift in Sources */,
 				D852A9772B468185005C61C5 /* AuthViewController.swift in Sources */,
 				D852A9732B467C7E005C61C5 /* UIColor+Extension.swift in Sources */,
+				D89FD6F72B4A9670005EEE8D /* LoginViewController.swift in Sources */,
+				D89FD6FE2B4AA6B5005EEE8D /* BottomSheetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,20 +473,20 @@
 				minimumVersion = 5.7.0;
 			};
 		};
-		D89FD6E42B468A99005EEE8D /* XCRemoteSwiftPackageReference "FloatingPanel" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/scenee/FloatingPanel";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.8.1;
-			};
-		};
 		D89FD6E72B46941C005EEE8D /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 6.6.0;
+			};
+		};
+		D89FD6FA2B4A97E6005EEE8D /* XCRemoteSwiftPackageReference "FloatingPanel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scenee/FloatingPanel";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -468,11 +496,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D852A9642B43D1B0005C61C5 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		D89FD6E52B468A99005EEE8D /* FloatingPanel */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D89FD6E42B468A99005EEE8D /* XCRemoteSwiftPackageReference "FloatingPanel" */;
-			productName = FloatingPanel;
 		};
 		D89FD6E82B46941C005EEE8D /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -488,6 +511,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D89FD6E72B46941C005EEE8D /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		D89FD6FB2B4A97E6005EEE8D /* FloatingPanel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D89FD6FA2B4A97E6005EEE8D /* XCRemoteSwiftPackageReference "FloatingPanel" */;
+			productName = FloatingPanel;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
