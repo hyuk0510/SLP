@@ -8,9 +8,17 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import KakaoSDKCommon
+import RxKakaoSDKCommon
+import KakaoSDKAuth
+import RxKakaoSDKAuth
+import KakaoSDKUser
+import RxKakaoSDKUser
+import AuthenticationServices
 
 final class AuthViewController: BaseViewController {
     
+//    private let appleIDButton = ASAuthorizationAppleIDButton(type: .signUp, style: .black)
     private let appleIDButton = UIButton()
     private let kakaoButton = UIButton()
     private let emailButton = UIButton()
@@ -27,6 +35,13 @@ final class AuthViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let sheetPresentationController = sheetPresentationController {
+            sheetPresentationController.detents = [.custom(resolver: { context in
+                return 290
+            })]
+        }
+        
+        sheetPresentationController?.prefersGrabberVisible = true
     }
     
     override func bind() {
@@ -41,9 +56,22 @@ final class AuthViewController: BaseViewController {
             .disposed(by: disposeBag)
         
         kakaoButton.rx.tap
-            .bind { _ in
-                print("kakaoLogin!")
-            }
+            .subscribe(onNext: { _ in
+                if (UserApi.isKakaoTalkLoginAvailable()) {
+                    print("hi")
+                    UserApi.shared.rx.loginWithKakaoTalk()
+                        .subscribe(onNext: { oauthToken in
+                            print("login success")
+                            
+                            _ = oauthToken
+                            
+                            self.kakaoAgree()
+                        }, onError: { error in
+                            print("error")
+                        })
+                        .disposed(by: self.disposeBag)
+                }
+            })
             .disposed(by: disposeBag)
         
         emailButton.rx.tap
@@ -57,11 +85,50 @@ final class AuthViewController: BaseViewController {
         
         signUpButton.rx.tap
             .bind { _ in
-                let vc = SignUpViewController()
+                let vc = UINavigationController(rootViewController: SignUpViewController())
                 self.present(vc, animated: true)
             }
             .disposed(by: disposeBag)
         
+    }
+    
+    private func kakaoAgree() {
+//        UserApi.shared.rx.me()
+//            .map({ user -> User in
+//                var scopes: [String] = []
+//
+//                if (user.kakaoAccount?.profileNeedsAgreement == true) { scopes.append("profile") }
+//                if (user.kakaoAccount?.emailNeedsAgreement == true) { scopes.append("account_email") }
+//
+//                if scopes.count > 0 {
+//                    print("추가 동의가 필요합니다")
+//
+//                    throw SdkError(scopes: scopes)
+//                } else {
+//                    print("추가 동의가 필요하지 않습니다")
+//
+//                    return user
+//                }
+//            })
+//            .retry(when: AuthApiCommon.shared.rx.incrementalAuthorizationRequired())
+//            .subscribe { user in
+//                print("me() success.")
+//
+//                //do something
+//                _ = user
+//            } onFailure: { error in
+//                print(error)
+//            }
+//            .disposed(by: disposeBag)
+        
+        UserApi.shared.rx.me()
+            .subscribe { user in
+                print(user)
+            } onFailure: { error in
+                print(error)
+            }
+            .disposed(by: disposeBag)
+
     }
     
     override func configure() {
