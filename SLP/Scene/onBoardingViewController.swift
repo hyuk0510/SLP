@@ -30,8 +30,8 @@ final class onBoardingViewController: BaseViewController {
         }
 
     override func bind() {
-        let title = BehaviorSubject(value: "새싹톡을 사용하면 어디서나\n팀을 모을 수 있습니다")
-        let image = BehaviorSubject(value: UIImage(named: "onboarding"))
+        let title = BehaviorRelay(value: "새싹톡을 사용하면 어디서나\n팀을 모을 수 있습니다")
+        let image = BehaviorRelay(value: UIImage(named: "onboarding"))
         
         title
             .subscribe(with: label) { owner, string in
@@ -53,7 +53,7 @@ final class onBoardingViewController: BaseViewController {
         
         startButton.rx.tap
             .bind { _ in
-                let vc = BottomSheetViewController()
+                let vc = AuthViewController()
                 self.present(vc, animated: true)
             }
             .disposed(by: disposeBag)

@@ -19,13 +19,22 @@
 		D852A9732B467C7E005C61C5 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D852A9722B467C7E005C61C5 /* UIColor+Extension.swift */; };
 		D852A9752B467DC9005C61C5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D852A9742B467DC9005C61C5 /* Color.swift */; };
 		D852A9772B468185005C61C5 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D852A9762B468185005C61C5 /* AuthViewController.swift */; };
+		D87741F12B51491F006DD366 /* SLPButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87741F02B51491F006DD366 /* SLPButton.swift */; };
 		D89FD6E92B46941C005EEE8D /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = D89FD6E82B46941C005EEE8D /* RxCocoa */; };
 		D89FD6EB2B46941C005EEE8D /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = D89FD6EA2B46941C005EEE8D /* RxRelay */; };
 		D89FD6ED2B46941C005EEE8D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D89FD6EC2B46941C005EEE8D /* RxSwift */; };
 		D89FD6F02B469C59005EEE8D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89FD6EF2B469C59005EEE8D /* SignUpViewController.swift */; };
 		D89FD6F72B4A9670005EEE8D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89FD6F62B4A9670005EEE8D /* LoginViewController.swift */; };
-		D89FD6FC2B4A97E6005EEE8D /* FloatingPanel in Frameworks */ = {isa = PBXBuildFile; productRef = D89FD6FB2B4A97E6005EEE8D /* FloatingPanel */; };
-		D89FD6FE2B4AA6B5005EEE8D /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89FD6FD2B4AA6B5005EEE8D /* BottomSheetViewController.swift */; };
+		D8C8B0992B4EC5ED00D36FDC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D8C8B0982B4EC5ED00D36FDC /* .gitignore */; };
+		D8C8B09B2B4EC5FC00D36FDC /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C8B09A2B4EC5FC00D36FDC /* APIKey.swift */; };
+		D8C8B0B02B4F0BB600D36FDC /* RxKakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = D8C8B0AF2B4F0BB600D36FDC /* RxKakaoSDK */; };
+		D8C8B0B22B4F0BB600D36FDC /* RxKakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D8C8B0B12B4F0BB600D36FDC /* RxKakaoSDKAuth */; };
+		D8C8B0B42B4F0BB600D36FDC /* RxKakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = D8C8B0B32B4F0BB600D36FDC /* RxKakaoSDKCommon */; };
+		D8C8B0B62B4F0BB600D36FDC /* RxKakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = D8C8B0B52B4F0BB600D36FDC /* RxKakaoSDKUser */; };
+		D8C8B0B92B4FA97500D36FDC /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = D8C8B0B82B4FA97500D36FDC /* Moya */; };
+		D8C8B0BB2B4FA97500D36FDC /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = D8C8B0BA2B4FA97500D36FDC /* RxMoya */; };
+		D8C8B0BD2B4FABBC00D36FDC /* SLPAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C8B0BC2B4FABBC00D36FDC /* SLPAPI.swift */; };
+		D8C8B0C02B4FBB3D00D36FDC /* SignUpTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C8B0BF2B4FBB3D00D36FDC /* SignUpTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,9 +51,13 @@
 		D852A9722B467C7E005C61C5 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		D852A9742B467DC9005C61C5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		D852A9762B468185005C61C5 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		D87741F02B51491F006DD366 /* SLPButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLPButton.swift; sourceTree = "<group>"; };
 		D89FD6EF2B469C59005EEE8D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D89FD6F62B4A9670005EEE8D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		D89FD6FD2B4AA6B5005EEE8D /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
+		D8C8B0982B4EC5ED00D36FDC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		D8C8B09A2B4EC5FC00D36FDC /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		D8C8B0BC2B4FABBC00D36FDC /* SLPAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLPAPI.swift; sourceTree = "<group>"; };
+		D8C8B0BF2B4FBB3D00D36FDC /* SignUpTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,10 +66,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D89FD6E92B46941C005EEE8D /* RxCocoa in Frameworks */,
-				D89FD6FC2B4A97E6005EEE8D /* FloatingPanel in Frameworks */,
+				D8C8B0B22B4F0BB600D36FDC /* RxKakaoSDKAuth in Frameworks */,
+				D8C8B0BB2B4FA97500D36FDC /* RxMoya in Frameworks */,
 				D852A9662B43D1B0005C61C5 /* SnapKit in Frameworks */,
+				D8C8B0B42B4F0BB600D36FDC /* RxKakaoSDKCommon in Frameworks */,
 				D89FD6ED2B46941C005EEE8D /* RxSwift in Frameworks */,
+				D8C8B0B62B4F0BB600D36FDC /* RxKakaoSDKUser in Frameworks */,
 				D89FD6EB2B46941C005EEE8D /* RxRelay in Frameworks */,
+				D8C8B0B92B4FA97500D36FDC /* Moya in Frameworks */,
+				D8C8B0B02B4F0BB600D36FDC /* RxKakaoSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +100,8 @@
 		D852A9492B43C685005C61C5 /* SLP */ = {
 			isa = PBXGroup;
 			children = (
+				D8C8B0BE2B4FBB3100D36FDC /* CustomView */,
+				D89FD6FF2B4BF01D005EEE8D /* Network */,
 				D852A9712B467C73005C61C5 /* Extension */,
 				D852A9672B43D25B005C61C5 /* Base */,
 				D852A95F2B43CA86005C61C5 /* Components */,
@@ -92,6 +112,8 @@
 				D852A9532B43C686005C61C5 /* Assets.xcassets */,
 				D852A9552B43C686005C61C5 /* LaunchScreen.storyboard */,
 				D852A9582B43C686005C61C5 /* Info.plist */,
+				D8C8B0982B4EC5ED00D36FDC /* .gitignore */,
+				D8C8B09A2B4EC5FC00D36FDC /* APIKey.swift */,
 			);
 			path = SLP;
 			sourceTree = "<group>";
@@ -128,7 +150,6 @@
 				D852A96B2B43DBE3005C61C5 /* SplashViewController.swift */,
 				D852A94E2B43C685005C61C5 /* onBoardingViewController.swift */,
 				D852A9762B468185005C61C5 /* AuthViewController.swift */,
-				D89FD6FD2B4AA6B5005EEE8D /* BottomSheetViewController.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -157,6 +178,23 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		D89FD6FF2B4BF01D005EEE8D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D8C8B0BC2B4FABBC00D36FDC /* SLPAPI.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D8C8B0BE2B4FBB3100D36FDC /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				D8C8B0BF2B4FBB3D00D36FDC /* SignUpTextField.swift */,
+				D87741F02B51491F006DD366 /* SLPButton.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -178,7 +216,12 @@
 				D89FD6E82B46941C005EEE8D /* RxCocoa */,
 				D89FD6EA2B46941C005EEE8D /* RxRelay */,
 				D89FD6EC2B46941C005EEE8D /* RxSwift */,
-				D89FD6FB2B4A97E6005EEE8D /* FloatingPanel */,
+				D8C8B0AF2B4F0BB600D36FDC /* RxKakaoSDK */,
+				D8C8B0B12B4F0BB600D36FDC /* RxKakaoSDKAuth */,
+				D8C8B0B32B4F0BB600D36FDC /* RxKakaoSDKCommon */,
+				D8C8B0B52B4F0BB600D36FDC /* RxKakaoSDKUser */,
+				D8C8B0B82B4FA97500D36FDC /* Moya */,
+				D8C8B0BA2B4FA97500D36FDC /* RxMoya */,
 			);
 			productName = SLP;
 			productReference = D852A9472B43C685005C61C5 /* SLP.app */;
@@ -211,7 +254,8 @@
 			packageReferences = (
 				D852A9642B43D1B0005C61C5 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				D89FD6E72B46941C005EEE8D /* XCRemoteSwiftPackageReference "RxSwift" */,
-				D89FD6FA2B4A97E6005EEE8D /* XCRemoteSwiftPackageReference "FloatingPanel" */,
+				D8C8B0AE2B4F0BB600D36FDC /* XCRemoteSwiftPackageReference "kakao-ios-sdk-rx" */,
+				D8C8B0B72B4FA97500D36FDC /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = D852A9482B43C685005C61C5 /* Products */;
 			projectDirPath = "";
@@ -228,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D852A9572B43C686005C61C5 /* LaunchScreen.storyboard in Resources */,
+				D8C8B0992B4EC5ED00D36FDC /* .gitignore in Resources */,
 				D852A9542B43C686005C61C5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,14 +288,17 @@
 				D852A94B2B43C685005C61C5 /* AppDelegate.swift in Sources */,
 				D852A94D2B43C685005C61C5 /* SceneDelegate.swift in Sources */,
 				D852A9612B43CAA4005C61C5 /* Typography.swift in Sources */,
+				D8C8B0BD2B4FABBC00D36FDC /* SLPAPI.swift in Sources */,
 				D89FD6F02B469C59005EEE8D /* SignUpViewController.swift in Sources */,
+				D87741F12B51491F006DD366 /* SLPButton.swift in Sources */,
+				D8C8B0C02B4FBB3D00D36FDC /* SignUpTextField.swift in Sources */,
 				D852A96C2B43DBE3005C61C5 /* SplashViewController.swift in Sources */,
 				D852A9752B467DC9005C61C5 /* Color.swift in Sources */,
 				D852A9692B43D263005C61C5 /* BaseViewController.swift in Sources */,
 				D852A9772B468185005C61C5 /* AuthViewController.swift in Sources */,
 				D852A9732B467C7E005C61C5 /* UIColor+Extension.swift in Sources */,
 				D89FD6F72B4A9670005EEE8D /* LoginViewController.swift in Sources */,
-				D89FD6FE2B4AA6B5005EEE8D /* BottomSheetViewController.swift in Sources */,
+				D8C8B09B2B4EC5FC00D36FDC /* APIKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +368,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -377,7 +425,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -481,12 +529,20 @@
 				minimumVersion = 6.6.0;
 			};
 		};
-		D89FD6FA2B4A97E6005EEE8D /* XCRemoteSwiftPackageReference "FloatingPanel" */ = {
+		D8C8B0AE2B4F0BB600D36FDC /* XCRemoteSwiftPackageReference "kakao-ios-sdk-rx" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/scenee/FloatingPanel";
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk-rx";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.8.1;
+				minimumVersion = 2.20.0;
+			};
+		};
+		D8C8B0B72B4FA97500D36FDC /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -512,10 +568,35 @@
 			package = D89FD6E72B46941C005EEE8D /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
 		};
-		D89FD6FB2B4A97E6005EEE8D /* FloatingPanel */ = {
+		D8C8B0AF2B4F0BB600D36FDC /* RxKakaoSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D89FD6FA2B4A97E6005EEE8D /* XCRemoteSwiftPackageReference "FloatingPanel" */;
-			productName = FloatingPanel;
+			package = D8C8B0AE2B4F0BB600D36FDC /* XCRemoteSwiftPackageReference "kakao-ios-sdk-rx" */;
+			productName = RxKakaoSDK;
+		};
+		D8C8B0B12B4F0BB600D36FDC /* RxKakaoSDKAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D8C8B0AE2B4F0BB600D36FDC /* XCRemoteSwiftPackageReference "kakao-ios-sdk-rx" */;
+			productName = RxKakaoSDKAuth;
+		};
+		D8C8B0B32B4F0BB600D36FDC /* RxKakaoSDKCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D8C8B0AE2B4F0BB600D36FDC /* XCRemoteSwiftPackageReference "kakao-ios-sdk-rx" */;
+			productName = RxKakaoSDKCommon;
+		};
+		D8C8B0B52B4F0BB600D36FDC /* RxKakaoSDKUser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D8C8B0AE2B4F0BB600D36FDC /* XCRemoteSwiftPackageReference "kakao-ios-sdk-rx" */;
+			productName = RxKakaoSDKUser;
+		};
+		D8C8B0B82B4FA97500D36FDC /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D8C8B0B72B4FA97500D36FDC /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		D8C8B0BA2B4FA97500D36FDC /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D8C8B0B72B4FA97500D36FDC /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
