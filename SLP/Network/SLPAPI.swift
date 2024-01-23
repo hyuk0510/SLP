@@ -11,6 +11,8 @@ import Moya
 enum SLPAPI {
     case kakaoLogin
     case refreshToken
+    case isValidEmail(email: String)
+    case signUp
 }
 
 extension SLPAPI: TargetType {
@@ -28,12 +30,16 @@ extension SLPAPI: TargetType {
             return "/v1/users/login/kakao"
         case .refreshToken:
             return "/v1/auth/refresh"
+        case .isValidEmail:
+            return "/v1/users/validation/email"
+        case .signUp:
+            return "/v1/users/join"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .kakaoLogin:
+        case .kakaoLogin, .isValidEmail, .signUp:
             return .post
         case .refreshToken:
             return .get
@@ -46,14 +52,18 @@ extension SLPAPI: TargetType {
             return .requestPlain
         case .refreshToken:
             return .requestPlain
+        case .isValidEmail(let email):
+            return .requestJSONEncodable(email)
+        case .signUp:
+            return .requestPlain
         }
     }
     
     var headers: [String : String]? {
         switch self {
-        case .kakaoLogin, .refreshToken:
+        case .kakaoLogin, .refreshToken, .isValidEmail, .signUp:
             return [
-                "Authorization" : "",
+                "Content-Type" : "application/json",
                 "SesacKey" : "\(APIKey.key)"
             ]
         }

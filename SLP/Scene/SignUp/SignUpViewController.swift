@@ -11,66 +11,23 @@ import RxCocoa
 
 final class SignUpViewController: BaseViewController {
     
-    private let emailLabel = {
-        let view = UILabel()
-        view.text = "이메일"
-        view.font = Typography.title2
-        return view
-    }()
+    private let emailLabel = SignUpLabel(text: "이메일")
+    private let nicknameLabel = SignUpLabel(text: "닉네임")
+    private let phoneNumberLabel = SignUpLabel(text: "연락처")
+    private let pwLabel = SignUpLabel(text: "비밀번호")
+    private let pwCheckLabel = SignUpLabel(text: "비밀번호 확인")
     
-    private let nicknameLabel = {
-        let view = UILabel()
-        view.text = "닉네임"
-        view.font = Typography.title2
-        return view
-    }()
+    private let emailTextField = SignUpTextField(placeholdertext: "이메일을 입력하세요")
+    private let nicknameTextField = SignUpTextField(placeholdertext: "닉네임을 입력하세요")
+    private let phoneNumberTextField = SignUpTextField(placeholdertext: "전화번호를 입력하세요")
+    private let pwTextField = SignUpTextField(placeholdertext: "비밀번호를 입력하세요")
+    private let pwCheckTextField = SignUpTextField(placeholdertext: "비밀번호를 한 번 더 입력하세요")
     
-    private let phoneNumberLabel = {
-        let view = UILabel()
-        view.text = "연락처"
-        view.font = Typography.title2
-        return view
-    }()
+    private lazy var emailCheckButton = SLPButton(title: "중복 확인")
+    private lazy var signUpButton = SLPButton(title: "가입하기")
     
-    private let pwLabel = {
-        let view = UILabel()
-        view.text = "비밀번호"
-        view.font = Typography.title2
-        return view
-    }()
-    
-    private let pwCheckLabel = {
-        let view = UILabel()
-        view.text = "비밀번호 확인"
-        view.font = Typography.title2
-        return view
-    }()
-    
-    private let emailTextField = SignUpTextField(str: "이메일을 입력하세요")
-    private let nicknameTextField = SignUpTextField(str: "닉네임을 입력하세요")
-    private let phoneNumberTextField = SignUpTextField(str: "전화번호를 입력하세요")
-    private let pwTextField = SignUpTextField(str: "비밀번호를 입력하세요")
-    private let pwCheckTextField = SignUpTextField(str: "비밀번호를 한 번 더 입력하세요")
-    
-    private let emailCheckButton = {
-        let view = UIButton()
-        view.backgroundColor = Brand.inactive
-        view.setTitle("중복 확인", for: .normal)
-        view.titleLabel?.font = Typography.title2
-        view.layer.cornerRadius = 8
-        return view
-    }()
-    
-    private let signUpButton = {
-        let view = UIButton()
-        view.backgroundColor = Brand.inactive
-        view.setTitle("가입하기", for: .normal)
-        view.titleLabel?.font = Typography.title2
-        view.layer.cornerRadius = 8
-        return view
-    }()
-    
-    private let email = BehaviorRelay(value: "이메일")
+    private var viewModel = SignupViewModel()
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,10 +36,35 @@ final class SignUpViewController: BaseViewController {
     
     override func bind() {
         
-//        email
-//            .subscribe(with: self) { owner, text in
-//                owner.
-//            }
+        let input = SignupViewModel.Input(text: emailTextField.rx.text)
+        let output = viewModel.transform(input: input)
+//        let isValidSignUp = 
+        
+        
+        output.validStatus
+            .bind(to: emailCheckButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        output.validStatus
+            .subscribe(with: self) { owner, valid in
+                owner.emailCheckButton.backgroundColor = valid ? Brand.green : Brand.inactive
+            }
+            .disposed(by: disposeBag)
+        
+        emailCheckButton.rx.tap
+            .subscribe(with: self) { owner, _ in
+                print("emailCheckButton Pressed")
+                AccountManager.shared.isValidEmail(email: "")
+            }
+            .disposed(by: disposeBag)
+        
+        signUpButton.rx.tap
+            .subscribe(with: self) { owner, _ in
+                print("signUpbutton Pressed")
+                AccountManager.shared.signUp()
+            }
+            .disposed(by: disposeBag)
+        
     }
     
     override func configure() {

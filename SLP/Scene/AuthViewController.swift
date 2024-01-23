@@ -22,7 +22,8 @@ final class AuthViewController: BaseViewController {
     private let appleIDButton = UIButton()
     private let kakaoButton = UIButton()
     private let emailButton = UIButton()
-    private let signUpButton = {
+    private let signUpButton =
+    {
         let view = UIButton()
         view.setTitle("또는 새롭게 회원가입 하기", for: .normal)
         view.setTitleColor(Brand.green, for: .normal)
@@ -45,9 +46,18 @@ final class AuthViewController: BaseViewController {
     }
     
     override func bind() {
+        
+        let signUpButtonTitle = BehaviorRelay(value: "또는 새롭게 회원가입 하기")
+        
         appleIDButton.rx.image().onNext(UIImage(named: "appleLogin"))
         kakaoButton.rx.image().onNext(UIImage(named: "kakaoLogin"))
         emailButton.rx.image().onNext(UIImage(named: "continueWithEmailButton"))
+        
+//        signUpButtonTitle
+//            .subscribe(with: self) { owner, title in
+//                owner.signUpButton.setTitle(title, for: .normal)
+//            }
+//            .disposed(by: disposeBag)
         
         appleIDButton.rx.tap
             .bind { _ in
@@ -63,6 +73,7 @@ final class AuthViewController: BaseViewController {
                         .subscribe(onNext: { oauthToken in
                             print("login success")
                             
+                            AccountManager.shared.kakaoLogin()
                             _ = oauthToken
                             
                             self.kakaoAgree()
@@ -75,18 +86,15 @@ final class AuthViewController: BaseViewController {
             .disposed(by: disposeBag)
         
         emailButton.rx.tap
-            .bind { _ in
-                print("continue with Email!")
-                //로그인 화면으로 전환
-                let vc = LoginViewController()
-                self.present(vc, animated: true)
+            .subscribe(with: self) { owner, _ in
+                owner.present(LoginViewController(), animated: true)
             }
             .disposed(by: disposeBag)
         
         signUpButton.rx.tap
-            .bind { _ in
-                let vc = UINavigationController(rootViewController: SignUpViewController())
-                self.present(vc, animated: true)
+            .subscribe(with: self) { owner, _ in
+//                owner.navigationController?.pushViewController(SignUpViewController(), animated: true)
+                owner.present(SignUpViewController(), animated: true)
             }
             .disposed(by: disposeBag)
         

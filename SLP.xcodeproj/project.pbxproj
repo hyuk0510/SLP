@@ -35,6 +35,9 @@
 		D8C8B0BB2B4FA97500D36FDC /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = D8C8B0BA2B4FA97500D36FDC /* RxMoya */; };
 		D8C8B0BD2B4FABBC00D36FDC /* SLPAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C8B0BC2B4FABBC00D36FDC /* SLPAPI.swift */; };
 		D8C8B0C02B4FBB3D00D36FDC /* SignUpTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C8B0BF2B4FBB3D00D36FDC /* SignUpTextField.swift */; };
+		D8D2FC542B5451E40015FBD2 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D2FC532B5451E40015FBD2 /* AccountManager.swift */; };
+		D8D2FC562B58FECE0015FBD2 /* SignUpLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D2FC552B58FECE0015FBD2 /* SignUpLabel.swift */; };
+		D8D2FC582B5910B30015FBD2 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D2FC572B5910B30015FBD2 /* SignUpViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,9 @@
 		D8C8B09A2B4EC5FC00D36FDC /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		D8C8B0BC2B4FABBC00D36FDC /* SLPAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLPAPI.swift; sourceTree = "<group>"; };
 		D8C8B0BF2B4FBB3D00D36FDC /* SignUpTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTextField.swift; sourceTree = "<group>"; };
+		D8D2FC532B5451E40015FBD2 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
+		D8D2FC552B58FECE0015FBD2 /* SignUpLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpLabel.swift; sourceTree = "<group>"; };
+		D8D2FC572B5910B30015FBD2 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				D89FD6EF2B469C59005EEE8D /* SignUpViewController.swift */,
+				D8D2FC572B5910B30015FBD2 /* SignUpViewModel.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -182,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				D8C8B0BC2B4FABBC00D36FDC /* SLPAPI.swift */,
+				D8D2FC532B5451E40015FBD2 /* AccountManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -191,6 +199,7 @@
 			children = (
 				D8C8B0BF2B4FBB3D00D36FDC /* SignUpTextField.swift */,
 				D87741F02B51491F006DD366 /* SLPButton.swift */,
+				D8D2FC552B58FECE0015FBD2 /* SignUpLabel.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -286,11 +295,14 @@
 			files = (
 				D852A94F2B43C685005C61C5 /* onBoardingViewController.swift in Sources */,
 				D852A94B2B43C685005C61C5 /* AppDelegate.swift in Sources */,
+				D8D2FC562B58FECE0015FBD2 /* SignUpLabel.swift in Sources */,
 				D852A94D2B43C685005C61C5 /* SceneDelegate.swift in Sources */,
+				D8D2FC582B5910B30015FBD2 /* SignUpViewModel.swift in Sources */,
 				D852A9612B43CAA4005C61C5 /* Typography.swift in Sources */,
 				D8C8B0BD2B4FABBC00D36FDC /* SLPAPI.swift in Sources */,
 				D89FD6F02B469C59005EEE8D /* SignUpViewController.swift in Sources */,
 				D87741F12B51491F006DD366 /* SLPButton.swift in Sources */,
+				D8D2FC542B5451E40015FBD2 /* AccountManager.swift in Sources */,
 				D8C8B0C02B4FBB3D00D36FDC /* SignUpTextField.swift in Sources */,
 				D852A96C2B43DBE3005C61C5 /* SplashViewController.swift in Sources */,
 				D852A9752B467DC9005C61C5 /* Color.swift in Sources */,

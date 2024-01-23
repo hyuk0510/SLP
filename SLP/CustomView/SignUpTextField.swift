@@ -8,34 +8,23 @@
 import UIKit
 
 final class SignUpTextField: UITextField {
-    
-    var str: String?
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
         
-    }
-    
-    convenience init(str: String) {
-        self.init()
+    init(placeholdertext: String) {
+        super.init(frame: .zero)
         
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 14, height: self.frame.height))
         
         self.backgroundColor = Brand.white
-        self.placeholder = str
+        self.placeholder = placeholdertext
         self.layer.cornerRadius = 8
         self.leftView = paddingView
         self.leftViewMode = .always
         self.rightView = paddingView
         self.rightViewMode = .always
-        self.attributedPlaceholder = NSAttributedString(string: str, attributes: [.font: Typography.body])
+        self.attributedPlaceholder = NSAttributedString(string: placeholdertext, attributes: [.font: Typography.body])
     }
         
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
-
-extension SignUpTextField: UITextFieldDelegate {
-    
 }

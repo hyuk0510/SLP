@@ -9,9 +9,10 @@ import UIKit
 
 final class SLPButton: UIButton {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(title: String) {
+        super.init(frame: .zero)
         
+        self.setTitle(title, for: .normal)
         self.configuration?.titlePadding = 20
         self.titleLabel?.font = Typography.title2
         layer.cornerRadius = 8
