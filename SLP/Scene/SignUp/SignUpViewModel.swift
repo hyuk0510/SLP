@@ -26,4 +26,5 @@ final class SignupViewModel {
         
         return Output(validStatus: validation)
     }
+    
 }

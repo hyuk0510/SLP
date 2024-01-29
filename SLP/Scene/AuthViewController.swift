@@ -22,10 +22,13 @@ final class AuthViewController: BaseViewController {
     private let appleIDButton = UIButton()
     private let kakaoButton = UIButton()
     private let emailButton = UIButton()
-    private let signUpButton =
-    {
+    private let signUpButton = {
         let view = UIButton()
-        view.setTitle("또는 새롭게 회원가입 하기", for: .normal)
+        let title = "또는 새롭게 회원가입 하기"
+        let attributedString = NSMutableAttributedString(string: title)
+        attributedString.addAttribute(.foregroundColor, value: Brand.black, range: NSRange(location: 0, length: 2))
+        
+        view.setAttributedTitle(attributedString, for: .normal)
         view.setTitleColor(Brand.green, for: .normal)
         view.titleLabel?.font = Typography.title2
         return view
@@ -46,18 +49,10 @@ final class AuthViewController: BaseViewController {
     }
     
     override func bind() {
-        
-        let signUpButtonTitle = BehaviorRelay(value: "또는 새롭게 회원가입 하기")
-        
+                
         appleIDButton.rx.image().onNext(UIImage(named: "appleLogin"))
         kakaoButton.rx.image().onNext(UIImage(named: "kakaoLogin"))
         emailButton.rx.image().onNext(UIImage(named: "continueWithEmailButton"))
-        
-//        signUpButtonTitle
-//            .subscribe(with: self) { owner, title in
-//                owner.signUpButton.setTitle(title, for: .normal)
-//            }
-//            .disposed(by: disposeBag)
         
         appleIDButton.rx.tap
             .bind { _ in
@@ -93,8 +88,8 @@ final class AuthViewController: BaseViewController {
         
         signUpButton.rx.tap
             .subscribe(with: self) { owner, _ in
-//                owner.navigationController?.pushViewController(SignUpViewController(), animated: true)
-                owner.present(SignUpViewController(), animated: true)
+                let vc = UINavigationController(rootViewController: SignUpViewController())
+                owner.present(vc, animated: true)
             }
             .disposed(by: disposeBag)
         

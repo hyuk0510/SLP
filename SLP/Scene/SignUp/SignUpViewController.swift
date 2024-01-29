@@ -38,7 +38,7 @@ final class SignUpViewController: BaseViewController {
         
         let input = SignupViewModel.Input(text: emailTextField.rx.text)
         let output = viewModel.transform(input: input)
-//        let isValidSignUp = 
+        let isValidSignUp = BehaviorRelay(value: false)
         
         
         output.validStatus
@@ -58,20 +58,19 @@ final class SignUpViewController: BaseViewController {
             }
             .disposed(by: disposeBag)
         
+        
         signUpButton.rx.tap
             .subscribe(with: self) { owner, _ in
                 print("signUpbutton Pressed")
-                AccountManager.shared.signUp()
+//                AccountManager.shared.signUp()
             }
             .disposed(by: disposeBag)
         
     }
     
     override func configure() {
-        navigationController?.navigationBar.isHidden = false
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(backButtonPressed))
         navigationItem.leftBarButtonItem?.tintColor = Brand.black
-        navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: Typography.title1 ]
         navigationController?.navigationBar.backgroundColor = Brand.white
         navigationController?.navigationBar.shadowImage = nil
         navigationController?.navigationBar.isTranslucent = true

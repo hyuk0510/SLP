@@ -12,7 +12,7 @@ enum SLPAPI {
     case kakaoLogin
     case refreshToken
     case isValidEmail(email: String)
-    case signUp
+    case signUp(account: Account)
 }
 
 extension SLPAPI: TargetType {
@@ -54,8 +54,8 @@ extension SLPAPI: TargetType {
             return .requestPlain
         case .isValidEmail(let email):
             return .requestJSONEncodable(email)
-        case .signUp:
-            return .requestPlain
+        case .signUp(let account):
+            return .requestJSONEncodable(account)
         }
     }
     

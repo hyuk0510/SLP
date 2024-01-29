@@ -38,9 +38,14 @@ final class AccountManager {
         }
     }
     
-    func signUp() {
-        provider.request(<#T##target: SLPAPI##SLPAPI#>) { result in
-            <#code#>
+    func signUp(account: Account) {
+        provider.request(.signUp(account: account)) { result in
+            switch result {
+            case .success(let response):
+                print("success", response.statusCode, response.data)
+            case .failure(let error):
+                print("error", error)
+            }
         }
     }
 }

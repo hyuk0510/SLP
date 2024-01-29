@@ -38,6 +38,8 @@
 		D8D2FC542B5451E40015FBD2 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D2FC532B5451E40015FBD2 /* AccountManager.swift */; };
 		D8D2FC562B58FECE0015FBD2 /* SignUpLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D2FC552B58FECE0015FBD2 /* SignUpLabel.swift */; };
 		D8D2FC582B5910B30015FBD2 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D2FC572B5910B30015FBD2 /* SignUpViewModel.swift */; };
+		D8D2FC5A2B5FB40D0015FBD2 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D2FC592B5FB40D0015FBD2 /* APIModel.swift */; };
+		D8D2FC5C2B6774F20015FBD2 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D2FC5B2B6774F20015FBD2 /* AuthViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		D8D2FC532B5451E40015FBD2 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		D8D2FC552B58FECE0015FBD2 /* SignUpLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpLabel.swift; sourceTree = "<group>"; };
 		D8D2FC572B5910B30015FBD2 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		D8D2FC592B5FB40D0015FBD2 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
+		D8D2FC5B2B6774F20015FBD2 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,7 @@
 		D852A95E2B43C6B3005C61C5 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				D8D2FC592B5FB40D0015FBD2 /* APIModel.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 				D852A96B2B43DBE3005C61C5 /* SplashViewController.swift */,
 				D852A94E2B43C685005C61C5 /* onBoardingViewController.swift */,
 				D852A9762B468185005C61C5 /* AuthViewController.swift */,
+				D8D2FC5B2B6774F20015FBD2 /* AuthViewModel.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -293,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8D2FC5C2B6774F20015FBD2 /* AuthViewModel.swift in Sources */,
 				D852A94F2B43C685005C61C5 /* onBoardingViewController.swift in Sources */,
 				D852A94B2B43C685005C61C5 /* AppDelegate.swift in Sources */,
 				D8D2FC562B58FECE0015FBD2 /* SignUpLabel.swift in Sources */,
@@ -310,6 +317,7 @@
 				D852A9772B468185005C61C5 /* AuthViewController.swift in Sources */,
 				D852A9732B467C7E005C61C5 /* UIColor+Extension.swift in Sources */,
 				D89FD6F72B4A9670005EEE8D /* LoginViewController.swift in Sources */,
+				D8D2FC5A2B5FB40D0015FBD2 /* APIModel.swift in Sources */,
 				D8C8B09B2B4EC5FC00D36FDC /* APIKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
